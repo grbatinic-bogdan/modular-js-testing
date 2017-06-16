@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link href="css/style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="dist/assets/js/main.js"></script>
+        <script src="node_modules/mustache/mustache.js"></script>
+        <script src="js/index.js"></script>
+    </head>
+    <body>
+        <div id="peopleModule">
+            <h1>People</h1>
+            <form id="personForm">
+                <input placeholder="name" type="text">
+                <button id="addPerson">Add Person</button>
+            </form>
+            <ul id="people">
+
+            </ul>
+        </div>
+    </body>
+    <!-- TEMPLATES START -->
+    <script id="people-template" type="text/template">
+        {{#people}}
+            <li>
+                <span>{{.}}</span>
+                <i class="del">X</i>
+            </li>
+        {{/people}}
+    </script>
+</html>
