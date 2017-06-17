@@ -49,6 +49,7 @@ var people = (function(){
 
     function addPerson(person) {
         _people.push(person);
+        events.emit('peopleChange', _people.length);
         _render();
     }
 
@@ -59,7 +60,7 @@ var people = (function(){
                 1
             );
         }
-
+        events.emit('peopleChange', _people.length);
         _render();
     }
 

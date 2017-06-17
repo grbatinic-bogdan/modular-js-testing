@@ -10,6 +10,9 @@
         <script src="js/index.js"></script>
     </head>
     <body>
+
+        <div class="hero-unit" id="statsModule"></div>        
+
         <div id="peopleModule">
             <h1>People</h1>
             <form id="personForm">
@@ -29,5 +32,10 @@
                 <i class="del">X</i>
             </li>
         {{/people}}
+    </script>
+
+    <script id="stats-template" type="text/template">
+        <h2>Stats</h2>
+        <strong>people: {{people}}</strong>
     </script>
 </html>
