@@ -3,33 +3,48 @@
     <head>
         <title></title>
         <meta charset="UTF-8">
-        <link href="css/style.css" rel="stylesheet">
+        <!--<link href="css/style.css" rel="stylesheet">-->
+        <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="dist/assets/js/main.js"></script>
         <script src="node_modules/mustache/mustache.js"></script>
         <script src="js/index.js"></script>
+
+        <style>
+            .del {
+                float: right;
+                color: firebrick;
+            }
+
+            
+        </style>
     </head>
     <body>
-
-        <div class="hero-unit" id="statsModule"></div>        
-
-        <div id="peopleModule">
-            <h1>People</h1>
-            <form id="personForm">
-                <input placeholder="name" type="text">
-                <button id="addPerson">Add Person</button>
-            </form>
-            <ul id="people">
-
-            </ul>
+        <div class="container">
+            <div class="hero-unit" id="statsModule"></div>                    
+            <div id="peopleModule">
+                <h1>People</h1>
+                <form id="personForm">
+                    <div class="form-group">
+                        <input placeholder="Name" type="text" class="form-control">
+                    </div>                                        
+                    <button id="addPerson" class="btn btn-primary">Add Person</button>                                        
+                </form>
+                <div class="col-md-4" style="padding: 0; margin-top: 10px;">
+                    <ul id="people" class="list-group">
+                    
+                    </ul>
+                </div>                
+            </div>
         </div>
+        
     </body>
     <!-- TEMPLATES START -->
     <script id="people-template" type="text/template">
         {{#people}}
-            <li>
+            <li class="list-group-item">
                 <span>{{.}}</span>
-                <i class="del">X</i>
+                <a href="javascript:void(0)" class="del">X</a>
             </li>
         {{/people}}
     </script>
